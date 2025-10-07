@@ -50,7 +50,45 @@ const styles = StyleSheet.create({
         height: 170,
         alignSelf: 'center',
     },
+    flatListContainer: {
+        width: '50%',
+        marginTop: 20,
+        backgroundColor: 'lightblue',
+        borderRadius: 10,
+        padding: 10,
+        elevation: 2,
+    },
+    flatListItem: {
+        backgroundColor: '#f9f9f9',
+        borderRadius: 8,
+        padding: 16,
+        marginVertical: 16,
+        shadowColor: '#000',
+        shadowOffset: { width: 0, height: 2 },
+        shadowOpacity: 0.1,
+        shadowRadius: 4,
+        elevation: 3,
+    },
+    flatListHeader: {
+        textAlign: 'center',
+        fontSize: 20,
+        fontWeight: 'bold',
+        color: '#1976d2',
+        marginBottom: 10,
+        borderBottomWidth: 1,
+        borderBottomColor: '#ccc',
+        paddingBottom: 6,
+        letterSpacing: 1,
+    },
+    flatListText: {
+        fontSize: 16,
+        color: '#333',
+        marginBottom: 4,
+        marginLeft: 8,
+    },
 
 });
+
+
 
 export default styles;

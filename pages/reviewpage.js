@@ -1,18 +1,24 @@
-import React from "react";
-import { View, Text, Button, Alert } from "react-native";
+import React, { useState } from "react";
+import { View, Text, Button, Alert, ActivityIndicator } from "react-native";
 import styles, { BUTTON_COLOR } from "../style";
 import axios from "axios";
 
 export default function Reviewpage({ route, navigation }) {
     const { formData } = route.params;
+    const [loading, setLoading] = useState(false);
+    const [success, setSuccess] = useState(false);
 
     const handleSubmit = async () => {
+        setLoading(true);
+        setSuccess(false);
         try {
             const response = await axios.post("http://127.0.0.1:8000/registration/api/register/", formData);
+            setSuccess(true);
             Alert.alert("Success", "User registered successfully!");
-            navigation.getBack();
         } catch (error) {
             Alert.alert("Error", JSON.stringify(error.response?.data || "Something went wrong"));
+        } finally {
+            setLoading(false);
         }
     }
 
@@ -27,7 +33,22 @@ export default function Reviewpage({ route, navigation }) {
                 <Text style={styles.reviewLabel}>Gender: <Text style={styles.reviewValue}>{formData.gender}</Text></Text>
 
                 <Button title="Go Back to Edit" onPress={() => navigation.goBack()} color={BUTTON_COLOR}/>
-                <Button title="Submit" onPress={handleSubmit} color={BUTTON_COLOR}/>
+            </View>
+
+            <View style={styles.buttonContainer}>
+                <Button title="Submit" onPress={handleSubmit} color={BUTTON_COLOR} disabled={loading}/>
+            </View>
+
+            {loading && (
+                <ActivityIndicator size="large" color={BUTTON_COLOR} style={{ marginTop: 20 }} />
+            )}
+
+            {success && (
+                <Text style={{ color: "green", fontSize: 18, marginTop: 20 }}>Data successfully submitted!</Text>
+            )}
+
+            <View style={styles.buttonContainer}>
+                <Button title="View User List" onPress={() => navigation.navigate("UserList")} color={BUTTON_COLOR}/>
             </View>
         </View>
     );

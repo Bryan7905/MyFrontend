@@ -16,6 +16,14 @@ export default function Homepage({ navigation }) {
                     color={BUTTON_COLOR}
                 />
             </View>
+
+            <View style={styles.buttonContainer}>
+                <Button
+                    title="View User"
+                    onPress={() => navigation.navigate('UserList')}
+                    color={BUTTON_COLOR}
+                />
+            </View>
         </View>
     );
 }
