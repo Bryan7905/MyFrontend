@@ -12,7 +12,7 @@ export default function Reviewpage({ route, navigation }) {
         setLoading(true);
         setSuccess(false);
         try {
-            const response = await axios.post("http://192.168.20.245:8000/registration/api/register/", formData);
+            const response = await axios.post("http://192.168.30.205:8000/registration/api/register/", formData);
             setSuccess(true);
             Alert.alert("Success", "User registered successfully!");
         } catch (error) {
