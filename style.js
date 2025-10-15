@@ -86,9 +86,25 @@ const styles = StyleSheet.create({
         marginBottom: 4,
         marginLeft: 8,
     },
-
+    // New styles for EditUserPage
+    editUserTitle: {
+        fontSize: 28,
+        fontWeight: 'bold',
+        marginBottom: 30,
+        color: '#333',
+        textAlign: 'center',
+    },
+    editUserForm: {
+        width: '80%',
+        maxWidth: 300,
+        alignItems: 'center',
+    },
+    editUserButtonContainer: {
+        width: '100%',
+        marginTop: 20,
+        borderRadius: 8,
+        overflow: 'hidden',
+    },
 });
-
-
 
 export default styles;
