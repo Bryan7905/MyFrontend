@@ -12,7 +12,7 @@ export default function Reviewpage({ route, navigation }) {
         setLoading(true);
         setSuccess(false);
         try {
-            const response = await axios.post("https://peitel-backend-knbq.onrender.com/registration/api/register/", formData);
+            const response = await axios.post("https://myproject-q5hz.onrender.com/registration/api/register/", formData);
             setSuccess(true);
             Alert.alert("Success", "User registered successfully!");
         } catch (error) {

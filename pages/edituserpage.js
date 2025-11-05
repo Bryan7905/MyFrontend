@@ -18,7 +18,7 @@ export default function EditUserPage({route, navigation}) {
             return;
         }
 
-        axios.put(`https://peitel-backend-knbq.onrender.com/registration/api/users/${user.id}/`, {
+        axios.put(`https://myproject-q5hz.onrender.com/registration/api/users/${user.id}/`, {
             first_name: firstName,
             last_name: lastName,
             email: user_email,

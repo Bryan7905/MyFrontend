@@ -7,7 +7,7 @@ export default function UserListPage({navigation}) {
     const [users, setUsers] = useState([]);
 
     useEffect(() => {
-        axios.get("https://peitel-backend-knbq.onrender.com/registration/api/users/")
+        axios.get("https://myproject-q5hz.onrender.com/registration/api/users/")
         .then(res => {
             setUsers(res.data);
         })
@@ -31,7 +31,7 @@ export default function UserListPage({navigation}) {
                     text: "Delete", 
                     style: "destructive",
                     onPress: () => {
-                        axios.delete(`https://peitel-backend-knbq.onrender.com/registration/api/users/${id}/`)
+                        axios.delete(`https://myproject-q5hz.onrender.com/registration/api/users/${id}/`)
                             .then(() => {
                                 Alert.alert("Success", "User deleted successfully");
                                 setUsers(users.filter(user => user.id !== id));
